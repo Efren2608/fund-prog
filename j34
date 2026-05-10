@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+int main(){
+int totalPacientes=0;
+int edad=0;
+float peso=0;
+int totNin=0, totAdol=0,totJov=0,totAdulJ=0,totAdulM=0;
+float sumaNinios=0,sumaAdol=0,sumaJoven=0,sumaAdultJ=0,sumaAdultM=0;
+float promedioNinios=0, promedioAdolecentes=0 ,promedioJovenes=0;
+float promedioAdultosJovenes=0, promedioAdultosMayores=0;
+
+cout<<"--Registro de pacientes--"<<endl;
+cout<<"Ingresa la cantidad de pacientes a regisgtrar: "<<endl;
+cin>>totalPacientes;
+if(totalPacientes <= 0){
+        cout << "No hay pacientes para registrar." << endl;
+        return 0;}
+for(int pacientes=0; pacientes<totalPacientes; pacientes++){
+cout<<"Ingresa la edad del paciente: ";
+cin>>edad;
+cout<<"Ingresa el peso del paciente: ";
+cin>>peso;
+        if(edad >=0&&edad<=12){
+            sumaNinios=sumaNinios+peso;
+            totNin++;}
+        else if(edad >=13&&edad<=17){
+                sumaAdol=sumaAdol+peso;
+            totAdol++;}
+       else if(edad >=18&&edad<=29){
+                sumaJoven=sumaJoven+peso;
+            totJov++;}
+       else if(edad >=30&&edad<=59){
+                sumaAdultJ=sumaAdultJ+peso;
+            totAdulJ++;}
+       else if(edad>=60){
+                sumaAdultM=sumaAdultM+peso;
+            totAdulM++;}
+}
+    if(totNin >0){promedioNinios =(sumaNinios)/totNin;}
+    if(totAdol >0){promedioAdolecentes = (sumaAdol)/totAdol;}
+    if(totJov>0){promedioJovenes = (sumaJoven)/totJov;}
+    if(totAdulJ>0){promedioAdultosJovenes = (sumaAdultJ)/totAdulJ;}
+    if(totAdulM>0){promedioAdultosMayores = (sumaAdultM)/totAdulM;}
+
+    cout<<"--Recuento de "<<totalPacientes<<"pacientes--"<<endl;
+    cout<<"Peso promedio de los ninios: "<<promedioNinios<<endl;
+    cout<<"Peso promedio de los adolecentes: "<<promedioAdolecentes<<endl;
+    cout<<"Peso promedio de los jovenes: "<<promedioJovenes<<endl;
+    cout<<"Peso promedio de los adultos jovenes: "<<promedioAdultosJovenes<<endl;
+    cout<<"Peso promedio de los adultos mayores: "<<promedioAdultosMayores<<endl;
+return 0;}
